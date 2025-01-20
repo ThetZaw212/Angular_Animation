@@ -1,5 +1,6 @@
 import {
   animate,
+  keyframes,
   state,
   style,
   transition,
@@ -17,26 +18,49 @@ import { provideAnimations } from '@angular/platform-browser/animations';
   styleUrls: ['./app.component.scss'],
   providers: [provideAnimations()],
   animations: [
-    trigger('rotateEarth', [state('start', style({ transform: 'rotate(0deg)' })), state('end', style({ transform: 'rotate(360deg)' })), transition('start => end', animate('1s ease-in')), transition('end => start', animate('1s ease-out'))])
+    trigger('rotateEarth', [
+      state('rotate', style({ transform: 'rotateZ({{ rotation }}deg)' }), {
+        params: { rotation: 0 },
+      }),
+      transition('* => *', [
+        animate('0.2s ease-out'),
+      ]),
+    ]),
+    trigger('blurHeader', [
+      state('clear', style({ filter: 'blur(0px)', opacity: 1 })),
+      state('blur', style({ filter: 'blur(5px)', opacity: 0 })),
+      transition('clear <=> blur', animate('0.5s ease-in-out')),
+    ]),
   ],
 })
 export class AppComponent {
-  title = 'angular_animation';
-  rotationState = 'default';
-  scrollPosition = 0;
+  rotation = 0;
+  lastScrollTop = 0;
+  blurState = 'clear';
+
+  constructor() { }
 
   @HostListener('window:scroll', ['$event'])
   onScroll(event: Event): void {
-    const newScrollPosition = window.scrollY;
-    if (newScrollPosition > this.scrollPosition) {
-      // Scrolling down
-      this.rotationState = 'rotated';
-    } else if (newScrollPosition < this.scrollPosition) {
-      // Scrolling up
-      this.rotationState = 'default';
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    const delta = scrollTop - this.lastScrollTop;
+
+    if (delta > 0) {
+      // Scrolling down: rotate left
+      this.rotation -= 2.5;
+    } else if (delta < 0) {
+      // Scrolling up: rotate right
+      this.rotation += 2.5;
     }
-    this.scrollPosition = newScrollPosition;
+
+    this.blurState = scrollTop > 0 ? 'blur' : 'clear';
+    this.lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Prevent negative scroll values
   }
 
-  constructor() { }
+  @HostListener('window:beforeunload')
+  resetScrollAndRotation(): void {
+    window.scrollTo(0, 0);
+    this.rotation = 0;
+    this.blurState = 'clear';
+  }
 }
