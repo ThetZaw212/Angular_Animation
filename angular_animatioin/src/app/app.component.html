@@ -63,12 +63,16 @@
     </div>
   </div>
   <div>
-    <h2 class="text-3xl font-bold mb-4">
+    <h2 class="text-3xl font-bold mb-4" [@slideInCard]="cardState">
       More About Our Earth
     </h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
       <!-- Card 1 -->
-      <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+      <div class="bg-gray-800 p-4 rounded-lg shadow-lg" 
+          [@slideInCard]="cardState" 
+           [@hoverPop]="cardHoverStates[0] || 'normal'" 
+           (mouseenter)="onCardHover(0)" 
+           (mouseleave)="onCardLeave(0)">
         <img alt="A lush green rainforest with dense foliage and tall trees"
           class="w-full h-48 object-cover rounded-lg mb-4" height="400"
           src="https://storage.googleapis.com/a1aa/image/EB24sukVDqbuHNMoSrsuIYdNKF5JMyhJzLqeBliWjDjHRhDKA.jpg"
@@ -82,7 +86,11 @@
         </p>
       </div>
       <!-- Card 2 -->
-      <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+      <div class="bg-gray-800 p-4 rounded-lg shadow-lg" 
+          [@slideInCard]="cardState" 
+           [@hoverPop]="cardHoverStates[1] || 'normal'" 
+           (mouseenter)="onCardHover(1)" 
+           (mouseleave)="onCardLeave(1)">
         <img alt="A vast desert landscape with sand dunes under a clear blue sky"
           class="w-full h-48 object-cover rounded-lg mb-4" height="400"
           src="https://storage.googleapis.com/a1aa/image/DL59ehnU7PzoXqyRPea9uggebNuXWXc91M44TDtpohXdEFOoA.jpg"
@@ -96,7 +104,11 @@
         </p>
       </div>
       <!-- Card 3 -->
-      <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+      <div class="bg-gray-800 p-4 rounded-lg shadow-lg" 
+          [@slideInCard]="cardState" 
+           [@hoverPop]="cardHoverStates[2] || 'normal'" 
+           (mouseenter)="onCardHover(2)" 
+           (mouseleave)="onCardLeave(2)">
         <img alt="A view of the ocean with waves crashing against the shore"
           class="w-full h-48 object-cover rounded-lg mb-4" height="400"
           src="https://storage.googleapis.com/a1aa/image/e6fpef22LJMajSJCPGlcUghbxE5HotCNfAfgzRs9ikrglowBF.jpg"
@@ -110,7 +122,11 @@
         </p>
       </div>
       <!-- Card 4 -->
-      <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+      <div class="bg-gray-800 p-4 rounded-lg shadow-lg" 
+          [@slideInCard]="cardState" 
+           [@hoverPop]="cardHoverStates[3] || 'normal'" 
+           (mouseenter)="onCardHover(3)" 
+           (mouseleave)="onCardLeave(3)">
         <img alt="A mountain range with snow-capped peaks under a clear sky"
           class="w-full h-48 object-cover rounded-lg mb-4" height="400"
           src="https://storage.googleapis.com/a1aa/image/6wFBdkuvRPJ3DJCyuFhyPUU31v9StesiK7C5395eIOXRiCHUA.jpg"
@@ -124,7 +140,11 @@
         </p>
       </div>
       <!-- Card 5 -->
-      <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+      <div class="bg-gray-800 p-4 rounded-lg shadow-lg" 
+          [@slideInCard]="cardState" 
+           [@hoverPop]="cardHoverStates[4] || 'normal'" 
+           (mouseenter)="onCardHover(4)" 
+           (mouseleave)="onCardLeave(4)">
         <img alt="A polar landscape with icebergs floating in the water"
           class="w-full h-48 object-cover rounded-lg mb-4" height="400"
           src="https://storage.googleapis.com/a1aa/image/HUV4GI745MaQMpxkWdzStzrbcxRtiDwomlcp5mWQbjFlowBF.jpg"
@@ -138,7 +158,11 @@
         </p>
       </div>
       <!-- Card 6 -->
-      <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+      <div class="bg-gray-800 p-4 rounded-lg shadow-lg" 
+          [@slideInCard]="cardState" 
+           [@hoverPop]="cardHoverStates[5] || 'normal'" 
+           (mouseenter)="onCardHover(5)" 
+           (mouseleave)="onCardLeave(5)">
         <img alt="A savanna landscape with tall grasses and scattered trees"
           class="w-full h-48 object-cover rounded-lg mb-4" height="400"
           src="https://storage.googleapis.com/a1aa/image/dl2us4f0VV0HPK7Uvfz9ktUBDhjGF9ANIrfQqWuOkCpkEFOoA.jpg"
@@ -155,8 +179,8 @@
   </div>
 </div>
 <!-- footer -->
-<div class="bg-gray-800 p-4 mt-8 text-white">
-  <div class="container mx-auto text-center">
+<div class="p-4 mt-8 text-white">
+  <div class="container mx-auto text-start">
     <p>
       © 2025 Our Earth. All rights reserved.
     </p>
