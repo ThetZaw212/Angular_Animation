@@ -1,9 +1,164 @@
-<div class="earth-container">
-  <img
-    src="/earth.jpg"
-    alt="Earth"
-    class="earth-image"
-    [@rotateEarth]="rotationState"
-  />
+<!-- header -->
+<div class="p-4 text-white fixed top-0 left-0 right-0 z-50" [@blurHeader]="blurState">
+  <div class="container mx-auto flex justify-between items-center">
+    <h1 class="text-3xl font-bold">
+      Our Earth
+    </h1>
+    <nav>
+      <ul class="flex space-x-4">
+        <li>
+          <a class="hover:text-gray-400" href="#">
+            Home
+          </a>
+        </li>
+        <li>
+          <a class="hover:text-gray-400" href="#">
+            About
+          </a>
+        </li>
+        <li>
+          <a class="hover:text-gray-400" href="#">
+            Contact
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>  
+<!-- main -->
+<div class="container mx-auto p-4 text-white">
+  <div class="mb-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <!-- Earth Container -->
+      <div class="flex justify-center items-center">
+        <!-- Earth Container -->
+        <img class="w-3/4 h-auto rounded-full" [@rotateEarth]="{ value: 'rotate', params: { rotation: rotation } }"
+          src="/earth.jpg" alt="Earth" />
+      </div>
+      <!-- Text Container -->
+      <div class="flex flex-col justify-center items-start mt-10 md:mt-0">
+        <h1 class="text-4xl font-bold mb-4">
+          This is Our Earth
+        </h1>
+        <p class="text-lg mb-4">
+          The Earth is the third planet from the Sun and the only astronomical object known to harbor life. It has a
+          diverse range of ecosystems, from lush rainforests to arid deserts, and from vast oceans to towering
+          mountains.
+        </p>
+        <p class="text-lg mb-4">
+          Earth has a rich history that spans over 4.5 billion years. It has undergone significant changes, from the
+          formation of its initial crust to the development of its atmosphere and the emergence of life.
+        </p>
+        <p class="text-lg mb-4">
+          The planet is home to millions of species, including humans, who have developed complex societies and
+          technologies. Despite its vast resources, Earth faces numerous environmental challenges, such as climate
+          change, pollution, and habitat destruction.
+        </p>
+        <p class="text-lg mb-4">
+          Protecting our planet is crucial for the survival of all its inhabitants. Efforts to conserve natural
+          resources, reduce carbon emissions, and promote sustainable practices are essential for ensuring a healthy and
+          thriving Earth for future generations.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div>
+    <h2 class="text-3xl font-bold mb-4">
+      More About Our Earth
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <!-- Card 1 -->
+      <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+        <img alt="A lush green rainforest with dense foliage and tall trees"
+          class="w-full h-48 object-cover rounded-lg mb-4" height="400"
+          src="https://storage.googleapis.com/a1aa/image/EB24sukVDqbuHNMoSrsuIYdNKF5JMyhJzLqeBliWjDjHRhDKA.jpg"
+          width="600" />
+        <h3 class="text-2xl font-bold mb-2">
+          Rainforests
+        </h3>
+        <p class="text-lg">
+          Rainforests are vital to Earth's ecosystem, providing habitat for countless species and playing a crucial role
+          in regulating the planet's climate.
+        </p>
+      </div>
+      <!-- Card 2 -->
+      <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+        <img alt="A vast desert landscape with sand dunes under a clear blue sky"
+          class="w-full h-48 object-cover rounded-lg mb-4" height="400"
+          src="https://storage.googleapis.com/a1aa/image/DL59ehnU7PzoXqyRPea9uggebNuXWXc91M44TDtpohXdEFOoA.jpg"
+          width="600" />
+        <h3 class="text-2xl font-bold mb-2">
+          Deserts
+        </h3>
+        <p class="text-lg">
+          Deserts cover about one-fifth of Earth's land surface and are characterized by extreme temperatures and scarce
+          water resources.
+        </p>
+      </div>
+      <!-- Card 3 -->
+      <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+        <img alt="A view of the ocean with waves crashing against the shore"
+          class="w-full h-48 object-cover rounded-lg mb-4" height="400"
+          src="https://storage.googleapis.com/a1aa/image/e6fpef22LJMajSJCPGlcUghbxE5HotCNfAfgzRs9ikrglowBF.jpg"
+          width="600" />
+        <h3 class="text-2xl font-bold mb-2">
+          Oceans
+        </h3>
+        <p class="text-lg">
+          Oceans cover more than 70% of Earth's surface and are home to a diverse array of marine life, playing a key
+          role in global weather patterns.
+        </p>
+      </div>
+      <!-- Card 4 -->
+      <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+        <img alt="A mountain range with snow-capped peaks under a clear sky"
+          class="w-full h-48 object-cover rounded-lg mb-4" height="400"
+          src="https://storage.googleapis.com/a1aa/image/6wFBdkuvRPJ3DJCyuFhyPUU31v9StesiK7C5395eIOXRiCHUA.jpg"
+          width="600" />
+        <h3 class="text-2xl font-bold mb-2">
+          Mountains
+        </h3>
+        <p class="text-lg">
+          Mountains are formed through tectonic forces and erosion and are home to unique ecosystems and diverse
+          wildlife.
+        </p>
+      </div>
+      <!-- Card 5 -->
+      <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+        <img alt="A polar landscape with icebergs floating in the water"
+          class="w-full h-48 object-cover rounded-lg mb-4" height="400"
+          src="https://storage.googleapis.com/a1aa/image/HUV4GI745MaQMpxkWdzStzrbcxRtiDwomlcp5mWQbjFlowBF.jpg"
+          width="600" />
+        <h3 class="text-2xl font-bold mb-2">
+          Polar Regions
+        </h3>
+        <p class="text-lg">
+          The polar regions are characterized by extreme cold and ice-covered landscapes, playing a crucial role in
+          Earth's climate system.
+        </p>
+      </div>
+      <!-- Card 6 -->
+      <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+        <img alt="A savanna landscape with tall grasses and scattered trees"
+          class="w-full h-48 object-cover rounded-lg mb-4" height="400"
+          src="https://storage.googleapis.com/a1aa/image/dl2us4f0VV0HPK7Uvfz9ktUBDhjGF9ANIrfQqWuOkCpkEFOoA.jpg"
+          width="600" />
+        <h3 class="text-2xl font-bold mb-2">
+          Savannas
+        </h3>
+        <p class="text-lg">
+          Savannas are grasslands with scattered trees, found in regions with seasonal rainfall, and are home to a
+          variety of wildlife.
+        </p>
+      </div>
+    </div>
+  </div>
 </div>
-
+<!-- footer -->
+<div class="bg-gray-800 p-4 mt-8 text-white">
+  <div class="container mx-auto text-center">
+    <p>
+      © 2025 Our Earth. All rights reserved.
+    </p>
+  </div>
+</div>
