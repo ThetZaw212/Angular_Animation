@@ -1,0 +1,13 @@
+.earth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.earth-image {
+  width: 300px;
+  height: 300px;
+  transition: transform 2s ease-in-out;
+}
