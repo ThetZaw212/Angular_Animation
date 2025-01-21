@@ -1,10 +1,5 @@
 import {
-  animate,
-  keyframes,
-  state,
-  style,
-  transition,
-  trigger,
+  animate, keyframes, state, style, transition, trigger,
 } from '@angular/animations';
 import { CommonModule } from '@angular/common';
 import { Component, HostListener, AfterViewInit } from '@angular/core';
